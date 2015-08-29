@@ -27,3 +27,13 @@ print(get_column_letter(sheet.get_highest_column()))
 print(column_index_from_string('A'))
 print(column_index_from_string('AA'))
 
+print(tuple(sheet['A1':'C3']))
+for rowOfCellObjects in sheet['A1':'C3']:
+    for cellObj in rowOfCellObjects:
+        print(cellObj.coordinate, cellObj.value)
+    print('--- END OF ROW ---\n')
+
+print(sheet.columns[1])
+for cellObj in sheet.columns[1]:
+    print(cellObj.value)
+
